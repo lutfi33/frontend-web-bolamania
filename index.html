@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Mobile - Official Game</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#32f653',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#161616',
+                        'dark-accent': '#1f1f1f'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-dark-bg/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-black italic tracking-tighter">
+                    FC <span class="text-neon-green">MOBILE</span>
+                </a>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-neon-green transition font-semibold uppercase text-sm">HomePage</a>
+                    <a href="#news" class="hover:text-neon-green transition font-semibold uppercase text-sm">News & Update</a>
+                    <a href="#order" class="hover:text-neon-green transition font-semibold uppercase text-sm">Order</a>
+                    <a href="#gallery" class="hover:text-neon-green transition font-semibold uppercase text-sm">Gallery</a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg border-t border-white/10 p-4">
+            <a href="#home" class="block py-2 hover:text-neon-green">HomePage</a>
+            <a href="#news" class="block py-2 hover:text-neon-green">News & Update</a>
+            <a href="#order" class="block py-2 hover:text-neon-green">Order</a>
+            <a href="#gallery" class="block py-2 hover:text-neon-green">Gallery</a>
+        </div>
+    </nav>
+
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://placehold.co/1920x1080/050505/333?text=Stadium+Atmosphere" alt="Background" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-black/40"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">
+                The World's <br><span class="text-neon-green text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-emerald-400">Game</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                Rasakan pengalaman sepak bola paling otentik di genggamanmu. Bangun tim impian, cetak gol, dan jadilah legenda.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#order" class="bg-neon-green text-black font-bold py-3 px-8 rounded-full hover:bg-white transition transform hover:scale-105">
+                    ORDER NOW
+                </a>
+                <a href="#" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-black transition flex items-center justify-center gap-2">
+                    <i class="fas fa-play-circle"></i> TUTORIAL VIDEO
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center mb-10">
+                <div class="h-10 w-1 bg-neon-green mr-4"></div>
+                <h2 class="text-3xl font-bold uppercase tracking-wide">Key Features</h2>
+            </div>
+
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-5 md:overflow-visible no-scrollbar">
+                
+                <div class="min-w-[80%] md:min-w-0 snap-center bg-card-bg border border-white/10 rounded-xl overflow-hidden hover:border-neon-green transition group">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://placehold.co/400x300/111/fff?text=True+Motion" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-green mb-2">True Motion</h3>
+                        <p class="text-gray-400 text-sm">Animasi pemain yang lebih halus berdasarkan data pertandingan asli.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[80%] md:min-w-0 snap-center bg-card-bg border border-white/10 rounded-xl overflow-hidden hover:border-neon-green transition group">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://placehold.co/400x300/111/fff?text=Ultimate+Team" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-green mb-2">Ultimate Team</h3>
+                        <p class="text-gray-400 text-sm">Bangun skuad impianmu dari lebih dari 15.000 pemain.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[80%] md:min-w-0 snap-center bg-card-bg border border-white/10 rounded-xl overflow-hidden hover:border-neon-green transition group">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://placehold.co/400x300/111/fff?text=Impact+Engine" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-green mb-2">Impact Engine</h3>
+                        <p class="text-gray-400 text-sm">Fisika bola dan benturan pemain yang realistis.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[80%] md:min-w-0 snap-center bg-card-bg border border-white/10 rounded-xl overflow-hidden hover:border-neon-green transition group">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://placehold.co/400x300/111/fff?text=UCL+License" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-green mb-2">UCL License</h3>
+                        <p class="text-gray-400 text-sm">Mainkan turnamen resmi UEFA Champions League.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[80%] md:min-w-0 snap-center bg-card-bg border border-white/10 rounded-xl overflow-hidden hover:border-neon-green transition group">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://placehold.co/400x300/111/fff?text=Manager+Mode" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neon-green mb-2">Manager Mode</h3>
+                        <p class="text-gray-400 text-sm">Atur taktik dan bawa timmu menuju kejayaan.</p>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center text-gray-500 text-xs md:hidden mt-2 animate-pulse"><i class="fas fa-arrow-right"></i> Swipe untuk melihat fitur</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-card-bg relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-neon-green/5 blur-3xl rounded-full pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative group">
+                        <img src="https://placehold.co/500x600/000/32f653?text=Packaging+Box+Mockup" alt="Game Packaging" class="rounded-lg shadow-2xl shadow-neon-green/20 transform group-hover:-rotate-2 transition duration-500">
+                        <div class="absolute -bottom-5 -right-5 bg-neon-green text-black font-bold px-4 py-2 rounded-lg transform rotate-3">
+                            LIMITED EDITION
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 text-left">
+                    <h2 class="text-4xl font-black uppercase mb-6">Inside The Box</h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Edisi fisik MiniSoccer FC hadir dengan desain packaging premium yang memukau. Tidak hanya berisi kode game, tetapi juga koleksi item eksklusif yang tidak dijual terpisah.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-neon-green"></i>
+                            <span>Steelbook Case Eksklusif</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-neon-green"></i>
+                            <span>3000 FC Points (In-Game Currency)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-neon-green"></i>
+                            <span>Poster Fisik Pemain Bintang</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold uppercase text-center mb-12">Choose Your Edition</h2>
+            
+            <div class="max-w-4xl mx-auto bg-card-bg border border-white/10 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-2xl">
+                <div class="w-full md:w-1/3">
+                    <img src="https://placehold.co/400x400/111/fff?text=Product+Cover" alt="Game Cover" class="rounded-lg w-full shadow-lg">
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-3xl font-bold text-white">FC Mobile: Founder Edition</h3>
+                        <span class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">HOT</span>
+                    </div>
+                    
+                    <p class="text-gray-400 mb-6 text-sm">
+                        Dapatkan akses awal 3 hari sebelum rilis global, item Founder eksklusif, dan 5 Star Player Pick untuk memulai tim Ultimate Anda.
+                    </p>
+                    
+                    <div class="flex items-end gap-2 mb-8">
+                        <span class="text-3xl font-bold text-neon-green">IDR 799.000</span>
+                        <span class="text-gray-500 line-through text-sm mb-1">IDR 999.000</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button class="flex-1 bg-neon-green text-black font-bold py-3 rounded-lg hover:bg-white transition flex justify-center items-center gap-2">
+                            <i class="fas fa-shopping-cart"></i> ORDER NOW
+                        </button>
+                        <button class="p-3 border border-gray-600 rounded-lg text-gray-400 hover:text-white hover:border-white transition">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-4 flex gap-4 text-gray-500 text-2xl">
+                        <i class="fab fa-cc-visa hover:text-white transition"></i>
+                        <i class="fab fa-cc-mastercard hover:text-white transition"></i>
+                        <i class="fab fa-cc-paypal hover:text-white transition"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-20 bg-dark-accent">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-10">
+                <h2 class="text-3xl font-bold uppercase">Pitch Notes</h2>
+                <a href="#" class="text-neon-green text-sm font-bold hover:underline">View All News</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="bg-card-bg rounded-xl overflow-hidden group cursor-pointer">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Update+News" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-neon-green text-black text-xs font-bold px-2 py-1">UPDATE</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-500 text-xs mb-2">October 12, 2024</p>
+                        <h4 class="text-xl font-bold mb-3 group-hover:text-neon-green transition">Deep Dive: Gameplay Mechanics</h4>
+                        <p class="text-gray-400 text-sm line-clamp-3">
+                            Pelajari lebih lanjut tentang perubahan sistem dribbling dan pertahanan yang akan mengubah meta permainan musim ini.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden group cursor-pointer">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Esports" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-white text-black text-xs font-bold px-2 py-1">ESPORTS</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-500 text-xs mb-2">October 10, 2024</p>
+                        <h4 class="text-xl font-bold mb-3 group-hover:text-neon-green transition">FC Pro Open Qualifiers</h4>
+                        <p class="text-gray-400 text-sm line-clamp-3">
+                            Pendaftaran untuk turnamen global kini dibuka. Siapkan tim terbaikmu dan rebut total hadiah $1,000,000.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden group cursor-pointer">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Community" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-purple-500 text-white text-xs font-bold px-2 py-1">COMMUNITY</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-500 text-xs mb-2">October 05, 2024</p>
+                        <h4 class="text-xl font-bold mb-3 group-hover:text-neon-green transition">Team of the Week #5</h4>
+                        <p class="text-gray-400 text-sm line-clamp-3">
+                            Lihat siapa saja pemain yang masuk dalam daftar Team of the Week minggu ini berdasarkan performa liga nyata.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-neon-green text-black">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black uppercase mb-4">Join The Club</h2>
+            <p class="text-lg font-medium mb-8 max-w-2xl mx-auto">
+                Daftar sekarang untuk mendapatkan berita terkini, update patch, dan hadiah in-game eksklusif langsung ke email Anda.
+            </p>
+            
+            <form class="flex flex-col md:flex-row justify-center gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Masukkan Email Anda" class="px-6 py-4 rounded-full w-full focus:outline-none focus:ring-4 focus:ring-black/20">
+                <button type="button" class="bg-black text-white font-bold px-8 py-4 rounded-full hover:bg-gray-800 transition uppercase">
+                    Sign Up
+                </button>
+            </form>
+            <p class="text-xs mt-4 opacity-70">Dengan mendaftar, Anda menyetujui Kebijakan Privasi kami.</p>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="text-3xl font-black italic tracking-tighter block mb-6">
+                        FC <span class="text-neon-green">MOBILE</span>
+                    </a>
+                    <p class="text-gray-500 text-sm mb-6 max-w-sm">
+                        FC Mobile adalah game simulasi sepak bola terdepan yang menghadirkan pengalaman stadion ke perangkat Anda. Dikembangkan oleh tim pecinta sepak bola untuk pecinta sepak bola.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-neon-green hover:text-black transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-neon-green hover:text-black transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-neon-green hover:text-black transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-neon-green hover:text-black transition"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase mb-4">Game</h5>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-neon-green">Latest News</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Competitions</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Patch Notes</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Mobile App</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase mb-4">Support</h5>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-neon-green">Help Center</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Forum</a></li>
+                        <li><a href="#" class="hover:text-neon-green">About Us</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-gray-800 mb-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-gray-600 text-xs">
+                    &copy; 2024 FC Mobile Inc. All rights reserved.
+                </div>
+                
+                <div class="flex items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition">
+                    <i class="fab fa-cc-visa text-3xl text-white"></i>
+                    <i class="fab fa-cc-mastercard text-3xl text-white"></i>
+                    <div class="border border-white/50 rounded px-2 py-0.5 text-xs font-bold text-white">QRIS</div>
+                    <div class="border border-white/50 rounded px-2 py-0.5 text-xs font-bold text-white">GOPAY</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

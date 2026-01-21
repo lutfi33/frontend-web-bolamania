@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - FC Mobile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#32f653',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#161616',
+                        'dark-accent': '#1f1f1f'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Hide scrollbar saat modal terbuka */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-dark-bg/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black italic tracking-tighter">
+                    FC <span class="text-neon-green">MOBILE</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">HomePage</a>
+                    <a href="blog.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">News & Update</a>
+                    <a href="index.html#order" class="hover:text-neon-green transition font-semibold uppercase text-sm">Order</a>
+                    <a href="gallery.html" class="text-neon-green transition font-semibold uppercase text-sm">Gallery</a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg border-t border-white/10 p-4">
+            <a href="index.html" class="block py-2 hover:text-neon-green">HomePage</a>
+            <a href="blog.html" class="block py-2 hover:text-neon-green">News & Update</a>
+            <a href="index.html#order" class="block py-2 hover:text-neon-green">Order</a>
+            <a href="gallery.html" class="block py-2 text-neon-green">Gallery</a>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-12 text-center bg-gradient-to-b from-dark-accent to-dark-bg">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">
+                Visual <span class="text-neon-green">Experience</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Jelajahi tangkapan layar gameplay terbaru, concept art stadion, dan wallpaper eksklusif untuk perangkat Anda.
+            </p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 mb-10">
+        <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="filterGallery('all')" class="filter-btn active px-6 py-2 rounded-full border border-white/20 text-sm font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition bg-neon-green text-black">
+                Show All
+            </button>
+            <button onclick="filterGallery('gameplay')" class="filter-btn px-6 py-2 rounded-full border border-white/20 text-gray-300 text-sm font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition bg-card-bg">
+                Gameplay
+            </button>
+            <button onclick="filterGallery('wallpaper')" class="filter-btn px-6 py-2 rounded-full border border-white/20 text-gray-300 text-sm font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition bg-card-bg">
+                Wallpapers
+            </button>
+            <button onclick="filterGallery('cards')" class="filter-btn px-6 py-2 rounded-full border border-white/20 text-gray-300 text-sm font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition bg-card-bg">
+                Player Cards
+            </button>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 pb-20">
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            
+            <div class="gallery-item gameplay break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold.co/800x450/111/fff?text=Gameplay+Stadium" class="w-full object-cover group-hover:scale-110 transition duration-700" alt="Stadium Atmosphere">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-neon-green text-3xl transform scale-50 group-hover:scale-100 transition duration-300"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item cards break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold.co/400x600/222/fff?text=Player+Card+Haaland" class="w-full object-cover group-hover:scale-110 transition duration-700" alt="Erling Haaland Card">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-neon-green text-3xl transform scale-50 group-hover:scale-100 transition duration-300"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item wallpaper break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold.co/800x800/333/fff?text=Locker+Room+Art" class="w-full object-cover group-hover:scale-110 transition duration-700" alt="Locker Room Concept">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-neon-green text-3xl transform scale-50 group-hover:scale-100 transition duration-300"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item gameplay break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold.co/800x450/444/fff?text=Free+Kick+Moment" class="w-full object-cover group-hover:scale-110 transition duration-700" alt="Free Kick">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-neon-green text-3xl transform scale-50 group-hover:scale-100 transition duration-300"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item wallpaper break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold.co/1080x1920/111/32f653?text=Mobile+Wallpaper" class="w-full object-cover group-hover:scale-110 transition duration-700" alt="Phone Wallpaper">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-neon-green text-3xl transform scale-50 group-hover:scale-100 transition duration-300"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item cards break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold.co/400x600/555/fff?text=Legend+Icon+Card" class="w-full object-cover group-hover:scale-110 transition duration-700" alt="Legend Card">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-expand text-neon-green text-3xl transform scale-50 group-hover:scale-100 transition duration-300"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item gameplay break-inside-avoid group relative rounded-xl overflow-hidden cursor-pointer" onclick="openModal(this)">
+                <img src="https://placehold

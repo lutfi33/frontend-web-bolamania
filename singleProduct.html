@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FC Mobile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#32f653',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#161616',
+                        'input-bg': '#0f0f0f',
+                        'dark-accent': '#1f1f1f'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-dark-bg/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black italic tracking-tighter">
+                    FC <span class="text-neon-green">MOBILE</span>
+                </a>
+                <div class="hidden md:flex items-center gap-4 text-sm font-bold">
+                    <span class="text-gray-500">1. Cart</span>
+                    <i class="fas fa-chevron-right text-gray-700 text-xs"></i>
+                    <span class="text-neon-green">2. Checkout</span>
+                    <i class="fas fa-chevron-right text-gray-700 text-xs"></i>
+                    <span class="text-gray-500">3. Finish</span>
+                </div>
+                <div class="relative">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-neon-green text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">1</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+            
+            <h1 class="text-3xl font-black uppercase italic mb-8 border-b border-white/10 pb-4">
+                Secure <span class="text-neon-green">Checkout</span>
+            </h1>
+
+            <form action="#" method="POST">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <div class="lg:col-span-2 space-y-8">
+                        
+                        <div class="bg-card-bg p-6 md:p-8 rounded-2xl border border-white/5">
+                            <h2 class="text-xl font-bold uppercase mb-6 flex items-center">
+                                <span class="bg-neon-green text-black w-6 h-6 rounded flex items-center justify-center text-xs mr-3">1</span>
+                                Billing Details
+                            </h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">First Name</label>
+                                    <input type="text" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green transition" placeholder="Lutfi">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Last Name</label>
+                                    <input type="text" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green transition" placeholder="Hermansah">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Email Address</label>
+                                    <input type="email" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green transition" placeholder="email@example.com">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">WhatsApp Number</label>
+                                    <input type="tel" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green transition" placeholder="+62 812...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-card-bg p-6 md:p-8 rounded-2xl border border-white/5">
+                            <h2 class="text-xl font-bold uppercase mb-6 flex items-center">
+                                <span class="bg-neon-green text-black w-6 h-6 rounded flex items-center justify-center text-xs mr-3">2</span>
+                                Payment Method
+                            </h2>
+
+                            <div class="space-y-4">
+                                <label class="relative flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition group">
+                                    <input type="radio" name="payment" class="peer sr-only" checked>
+                                    <div class="absolute inset-0 border-2 border-transparent peer-checked:border-neon-green rounded-xl pointer-events-none transition"></div>
+                                    
+                                    <div class="flex items-center gap-4 w-full">
+                                        <div class="w-5 h-5 rounded-full border border-gray-500 peer-checked:bg-neon-green peer-checked:border-neon-green flex items-center justify-center">
+                                            <div class="w-2 h-2 bg-black rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <span class="font-bold block">Credit Card</span>
+                                            <span class="text-xs text-gray-500">Visa, Mastercard, JCB</span>
+                                        </div>
+                                        <div class="flex gap-2 text-xl text-gray-400">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <i class="fab fa-cc-mastercard"></i>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="relative flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition group">
+                                    <input type="radio" name="payment" class="peer sr-only">
+                                    <div class="absolute inset-0 border-2 border-transparent peer-checked:border-neon-green rounded-xl pointer-events-none transition"></div>
+                                    
+                                    <div class="flex items-center gap-4 w-full">
+                                        <div class="w-5 h-5 rounded-full border border-gray-500 peer-checked:bg-neon-green peer-checked:border-neon-green flex items-center justify-center">
+                                            <div class="w-2 h-2 bg-black rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <span class="font-bold block">QRIS / E-Wallet</span>
+                                            <span class="text-xs text-gray-500">Scan QR via Gopay, OVO, Dana</span>
+                                        </div>
+                                        <div class="flex gap-2 text-xl text-gray-400">
+                                            <i class="fas fa-qrcode"></i>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="relative flex items-center p-4 border border-white/10 rounded-xl cursor-pointer hover:bg-white/5 transition group">
+                                    <input type="radio" name="payment" class="peer sr-only">
+                                    <div class="absolute inset-0 border-2 border-transparent peer-checked:border-neon-green rounded-xl pointer-events-none transition"></div>
+                                    
+                                    <div class="flex items-center gap-4 w-full">
+                                        <div class="w-5 h-5 rounded-full border border-gray-500 peer-checked:bg-neon-green peer-checked:border-neon-green flex items-center justify-center">
+                                            <div class="w-2 h-2 bg-black rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <span class="font-bold block">Virtual Account</span>
+                                            <span class="text-xs text-gray-500">BCA, Mandiri, BNI, BRI</span>
+                                        </div>
+                                        <div class="flex gap-2 text-xl text-gray-400">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="bg-card-bg p-6 rounded-2xl border border-white/5 sticky top-28 shadow-2xl">
+                            <h3 class="text-lg font-bold uppercase mb-6">Order Summary</h3>
+
+                            <div class="flex gap-4 mb-6 pb-6 border-b border-white/10">
+                                <img src="https://placehold.co/100x100/222/fff?text=Cover" class="w-16 h-16 rounded object-cover border border-white/10">
+                                <div>
+                                    <h4 class="font-bold text-sm">FC Mobile: Founder Edition</h4>
+                                    <p class="text-xs text-gray-500 mb-1">Platform: Mobile</p>
+                                    <p class="text-neon-green font-bold text-sm">IDR 799.000</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Promo Code</label>
+                                <div class="flex gap-2">
+                                    <input type="text" class="flex-1 bg-input-bg border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-neon-green transition" placeholder="Enter code">
+                                    <button type="button" class="bg-white text-black text-xs font-bold px-4 py-2 rounded-lg hover:bg-gray-200 transition">APPLY</button>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 mb-6 text-sm">
+                                <div class="flex justify-between text-gray-400">
+                                    <span>Subtotal</span>
+                                    <span>IDR 799.000</span>
+                                </div>
+                                <div class="flex justify-between text-gray-400">
+                                    <span>Tax (11%)</span>
+                                    <span>IDR 87.890</span>
+                                </div>
+                                <div class="flex justify-between text-neon-green font-bold">
+                                    <span>Discount</span>
+                                    <span>- IDR 0</span>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-white/10 pt-4 mb-6">
+                                <div class="flex justify-between items-end">
+                                    <span class="text-gray-300 font-bold">Total</span>
+                                    <span class="text-2xl font-black text-white">IDR 886.890</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-neon-green text-black font-bold py-4 rounded-xl hover:bg-white transition uppercase shadow-[0_0_15px_rgba(50,246,83,0.3)] flex justify-center items-center gap-2 group">
+                                Place Order <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                            </button>
+
+                            <p class="text-[10px] text-gray-500 text-center mt-4">
+                                <i class="fas fa-lock mr-1"></i> Your transaction is secured with 256-bit SSL encryption.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <footer class="bg-black text-white py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-gray-600 text-xs">
+                &copy; 2024 FC Mobile Inc. All rights reserved.
+            </div>
+            <div class="flex gap-4 opacity-50 grayscale">
+                <i class="fab fa-cc-visa text-2xl"></i>
+                <i class="fab fa-cc-mastercard text-2xl"></i>
+                <i class="fas fa-shield-alt text-2xl"></i>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

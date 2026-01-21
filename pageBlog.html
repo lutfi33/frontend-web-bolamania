@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates - FC Mobile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#32f653',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#161616',
+                        'dark-accent': '#1f1f1f'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-dark-bg/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black italic tracking-tighter">
+                    FC <span class="text-neon-green">MOBILE</span>
+                </a>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">HomePage</a>
+                    <a href="/pageBlog.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">News & Update</a>
+                    <a href="/singleProduct.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">Order</a>
+                    <a href="/gallery.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">Gallery</a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg border-t border-white/10 p-4">
+            <a href="index.html" class="block py-2 hover:text-neon-green">HomePage</a>
+            <a href="blog.html" class="block py-2 text-neon-green">News & Update</a>
+            <a href="index.html#order" class="block py-2 hover:text-neon-green">Order</a>
+            <a href="index.html#gallery" class="block py-2 hover:text-neon-green">Gallery</a>
+        </div>
+    </nav>
+
+    <div class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+
+            <div class="mb-12 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">
+                    Pitch <span class="text-neon-green">Notes</span>
+                </h1>
+                <p class="text-gray-400 mt-2">Berita terbaru, update patch, dan wawasan langsung dari tim pengembang.</p>
+            </div>
+
+            <div class="mb-16 group cursor-pointer relative rounded-2xl overflow-hidden border border-white/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent z-10"></div>
+                <div class="h-[400px] md:h-[500px] overflow-hidden">
+                    <img src="https://placehold.co/1200x600/111/fff?text=New+Season+Launch" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                </div>
+                
+                <div class="absolute bottom-0 left-0 p-6 md:p-12 z-20 max-w-3xl">
+                    <span class="bg-neon-green text-black text-xs font-bold px-3 py-1 rounded uppercase mb-4 inline-block">Trending</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 group-hover:text-neon-green transition">Musim Baru Dimulai: Sambut Era Baru FC Mobile</h2>
+                    <p class="text-gray-300 mb-6 line-clamp-2 md:line-clamp-none">
+                        Temukan semua perubahan gameplay, perombakan sistem ranking, dan hadiah eksklusif yang menanti Anda di musim kompetisi tahun ini.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-gray-400">
+                        <span><i class="far fa-calendar me-2"></i> 22 Okt 2024</span>
+                        <span><i class="far fa-clock me-2"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-10 border-b border-white/10 pb-6">
+                <button class="px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:bg-neon-green transition">All News</button>
+                <button class="px-6 py-2 rounded-full bg-card-bg border border-white/20 text-gray-300 font-bold text-sm hover:border-neon-green hover:text-neon-green transition">Game Updates</button>
+                <button class="px-6 py-2 rounded-full bg-card-bg border border-white/20 text-gray-300 font-bold text-sm hover:border-neon-green hover:text-neon-green transition">Esports</button>
+                <button class="px-6 py-2 rounded-full bg-card-bg border border-white/20 text-gray-300 font-bold text-sm hover:border-neon-green hover:text-neon-green transition">Deep Dives</button>
+                <button class="px-6 py-2 rounded-full bg-card-bg border border-white/20 text-gray-300 font-bold text-sm hover:border-neon-green hover:text-neon-green transition">Community</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Gameplay" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-1 uppercase border border-white/20">Deep Dive</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-neon-green text-xs font-bold mb-2">15 Okt 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-neon-green transition">Bedah Fitur: Power Shot & Dribbling Baru</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                            Pelajari mekanik baru untuk mencetak gol spektakuler dan cara melewati lawan dengan sistem dribbling yang lebih responsif.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-white text-sm font-bold hover:text-neon-green transition mt-auto">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=TOTW" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-1 uppercase border border-white/20">Live Event</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-neon-green text-xs font-bold mb-2">12 Okt 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-neon-green transition">Team of The Week: Week 5</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                            Haaland, Bellingham, dan Son memimpin daftar pemain terbaik minggu ini. Segera dapatkan kartu in-form mereka!
+                        </p>
+                        <a href="#" class="inline-flex items-center text-white text-sm font-bold hover:text-neon-green transition mt-auto">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Maintenance" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-1 uppercase border border-white/20">Server Update</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-neon-green text-xs font-bold mb-2">10 Okt 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-neon-green transition">Maintenance Schedule: October Patch</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                            Server akan offline sementara untuk pemeliharaan rutin dan penerapan patch perbaikan bug pada hari Kamis.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-white text-sm font-bold hover:text-neon-green transition mt-auto">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Esports" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-1 uppercase border border-white/20">Esports</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-neon-green text-xs font-bold mb-2">08 Okt 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-neon-green transition">Recap: FC Pro Open Asia Qualifiers</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                            Pertandingan sengit terjadi di kualifikasi Asia. Lihat siapa saja pro player yang berhasil lolos ke babak utama.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-white text-sm font-bold hover:text-neon-green transition mt-auto">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Guide" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-1 uppercase border border-white/20">Tips & Tricks</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-neon-green text-xs font-bold mb-2">05 Okt 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-neon-green transition">Guide: Formasi Terbaik untuk Counter Attack</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                            Analisis formasi 4-3-3 Attack dan 4-1-2-1-2 Narrow yang sedang meta untuk strategi serangan balik cepat.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-white text-sm font-bold hover:text-neon-green transition mt-auto">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/400x250/222/fff?text=Community" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-[10px] font-bold px-2 py-1 uppercase border border-white/20">Community</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-neon-green text-xs font-bold mb-2">01 Okt 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-neon-green transition">Goal of The Month: September Winners</h3>
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
+                            Saksikan kompilasi gol terbaik pilihan komunitas. Apakah gol salto Anda masuk dalam daftar?
+                        </p>
+                        <a href="#" class="inline-flex items-center text-white text-sm font-bold hover:text-neon-green transition mt-auto">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="mt-16 flex justify-center">
+                <nav class="flex items-center gap-2">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-gray-400 hover:text-white hover:border-white transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-neon-green text-black font-bold shadow-[0_0_10px_rgba(50,246,83,0.4)]">1</a>
+                    
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-gray-400 hover:text-white hover:border-white transition">2</a>
+                    
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-gray-400 hover:text-white hover:border-white transition">3</a>
+                    
+                    <span class="text-gray-500 px-2">...</span>
+                    
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-gray-400 hover:text-white hover:border-white transition">8</a>
+                    
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-gray-400 hover:text-white hover:border-white transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="text-3xl font-black italic tracking-tighter block mb-6">
+                        FC <span class="text-neon-green">MOBILE</span>
+                    </a>
+                    <p class="text-gray-500 text-sm mb-6 max-w-sm">
+                        FC Mobile adalah game simulasi sepak bola terdepan yang menghadirkan pengalaman stadion ke perangkat Anda.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-neon-green hover:text-black transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-neon-green hover:text-black transition"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase mb-4">Game</h5>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-neon-green">Latest News</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Competitions</a></li>
+                        <li><a href="#" class="hover:text-neon-green">Patch Notes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase mb-4">Support</h5>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-neon-green">Help Center</a></li>
+                        <li><a href="#" class="hover:text-neon-green">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-gray-800 mb-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-gray-600 text-xs">
+                    &copy; 2024 FC Mobile Inc. All rights reserved.
+                </div>
+                <div class="flex items-center gap-4 opacity-70">
+                    <i class="fab fa-cc-visa text-3xl text-white"></i>
+                    <i class="fab fa-cc-mastercard text-3xl text-white"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

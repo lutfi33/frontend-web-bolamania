@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive: HyperMotion V - FC Mobile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#32f653',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#161616',
+                        'dark-accent': '#1f1f1f',
+                        'text-body': '#d1d5db' // gray-300
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-dark-bg/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-black italic tracking-tighter">
+                    FC <span class="text-neon-green">MOBILE</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">HomePage</a>
+                    <a href="blog.html" class="text-neon-green transition font-semibold uppercase text-sm">News & Update</a>
+                    <a href="index.html#order" class="hover:text-neon-green transition font-semibold uppercase text-sm">Order</a>
+                    <a href="gallery.html" class="hover:text-neon-green transition font-semibold uppercase text-sm">Gallery</a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg border-t border-white/10 p-4">
+            <a href="index.html" class="block py-2 hover:text-neon-green">HomePage</a>
+            <a href="blog.html" class="block py-2 text-neon-green">News & Update</a>
+            <a href="#" class="block py-2 hover:text-neon-green">Order</a>
+            <a href="#" class="block py-2 hover:text-neon-green">Gallery</a>
+        </div>
+    </nav>
+
+    <div class="pt-28 pb-20">
+        <div class="container mx-auto px-6">
+
+            <nav class="flex text-sm text-gray-500 mb-8 animate-fade-in-down">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="index.html" class="hover:text-neon-green">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-xs"></i></li>
+                    <li><a href="blog.html" class="hover:text-neon-green">News</a></li>
+                    <li><i class="fas fa-chevron-right text-xs"></i></li>
+                    <li class="text-white truncate max-w-[150px] md:max-w-none">Gameplay Deep Dive</li>
+                </ol>
+            </nav>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <main class="lg:col-span-8">
+                    
+                    <div class="mb-8">
+                        <span class="bg-neon-green text-black text-xs font-bold px-3 py-1 rounded uppercase mb-4 inline-block">Deep Dive</span>
+                        <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                            Gameplay Deep Dive: Mengenal Teknologi HyperMotion V
+                        </h1>
+                        
+                        <div class="flex items-center gap-6 text-sm text-gray-400 border-b border-white/10 pb-6">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/40x40/333/fff?text=A" class="w-10 h-10 rounded-full border border-neon-green">
+                                <div>
+                                    <span class="block text-white font-bold">Admin FC</span>
+                                    <span class="text-xs">Developer Team</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="far fa-calendar"></i> 22 Okt 2024
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="far fa-clock"></i> 5 min read
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="https://placehold.co/800x450/111/fff?text=HyperMotion+V+Analysis" class="w-full rounded-2xl mb-10 shadow-lg border border-white/5">
+
+                    <article class="prose prose-invert prose-lg max-w-none text-text-body">
+                        <p class="lead text-xl text-gray-200 mb-6 font-light">
+                            Tahun ini, kami menghadirkan perombakan terbesar dalam sejarah franchise. HyperMotion V bukan sekadar update visual, melainkan revolusi cara pemain bergerak di lapangan digital.
+                        </p>
+
+                        <h2 class="text-2xl font-bold text-white mt-10 mb-4 flex items-center">
+                            <i class="fas fa-microchip text-neon-green mr-3"></i> Apa itu HyperMotion V?
+                        </h2>
+                        <p class="mb-6 leading-relaxed">
+                            HyperMotion V menggunakan data volumetrik dari lebih dari 180 pertandingan tingkat atas, termasuk UEFA Champions League dan Premier League. Ini memungkinkan kami untuk mereplikasi gerakan otentik pemain bintang seperti Erling Haaland atau Vinicius Jr dengan presisi yang belum pernah ada sebelumnya.
+                        </p>
+                        
+                        <blockquote class="bg-card-bg border-l-4 border-neon-green p-6 my-8 rounded-r-lg italic text-gray-300">
+                            "Tujuan kami adalah mengaburkan batas antara sepak bola virtual dan nyata. Ketika Anda melihat Haaland berlari, Anda akan langsung mengenalinya dari langkah kakinya."
+                            <footer class="text-sm font-bold text-neon-green mt-2 not-italic">— Lead Gameplay Producer</footer>
+                        </blockquote>
+
+                        <h3 class="text-xl font-bold text-white mt-8 mb-3">Fitur Utama Update Ini:</h3>
+                        <ul class="list-none space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-neon-green mt-1 mr-3"></i>
+                                <span><strong>Full Team Volumetric Motion:</strong> Algoritma baru yang menghitung gerakan 22 pemain di lapangan secara bersamaan.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-neon-green mt-1 mr-3"></i>
+                                <span><strong>AI Mimic:</strong> Pemain CPU kini mengambil keputusan taktis 4x lebih cepat dari versi sebelumnya.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-neon-green mt-1 mr-3"></i>
+                                <span><strong>Kinetic Physics:</strong> Benturan antar pemain kini memperhitungkan berat badan dan momentum lari.</span>
+                            </li>
+                        </ul>
+
+                        <div class="bg-dark-accent p-4 rounded-xl mb-8 border border-white/5">
+                            <img src="https://placehold.co/800x400/222/fff?text=Animation+Comparison" class="w-full rounded mb-2">
+                            <p class="text-center text-xs text-gray-500">Perbandingan animasi sprint standard (kiri) vs AcceleRATE 2.0 (kanan).</p>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-white mt-10 mb-4">Kesimpulan</h2>
+                        <p class="mb-6 leading-relaxed">
+                            Update ini akan tersedia mulai tanggal 25 Oktober. Pastikan perangkat Anda memiliki ruang penyimpanan yang cukup untuk mengunduh asset animasi beresolusi tinggi ini. Sampai jumpa di lapangan!
+                        </p>
+                    </article>
+
+                    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="flex gap-2">
+                            <span class="text-sm text-gray-500 mr-2">Tags:</span>
+                            <a href="#" class="bg-card-bg px-3 py-1 rounded-full text-xs hover:bg-neon-green hover:text-black transition">Gameplay</a>
+                            <a href="#" class="bg-card-bg px-3 py-1 rounded-full text-xs hover:bg-neon-green hover:text-black transition">Patch Notes</a>
+                            <a href="#" class="bg-card-bg px-3 py-1 rounded-full text-xs hover:bg-neon-green hover:text-black transition">Tech</a>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-sm text-gray-500 mr-2">Share:</span>
+                            <a href="#" class="text-gray-400 hover:text-neon-green"><i class="fab fa-facebook fa-lg"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-neon-green"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-neon-green"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mt-12">
+                        <a href="#" class="group bg-card-bg p-6 rounded-xl border border-white/5 hover:border-neon-green transition text-left">
+                            <span class="block text-xs text-gray-500 mb-1 group-hover:text-neon-green">Previous Article</span>
+                            <h4 class="font-bold text-sm truncate">Review Pemain: Jude Bellingham POTM</h4>
+                        </a>
+                        <a href="#" class="group bg-card-bg p-6 rounded-xl border border-white/5 hover:border-neon-green transition text-right">
+                            <span class="block text-xs text-gray-500 mb-1 group-hover:text-neon-green">Next Article</span>
+                            <h4 class="font-bold text-sm truncate">Maintenance Schedule Nov 2024</h4>
+                        </a>
+                    </div>
+                </main>
+
+                <aside class="lg:col-span-4 space-y-8">
+                    
+                    <div class="bg-card-bg p-6 rounded-2xl border border-white/5">
+                        <h3 class="font-bold uppercase mb-4 text-sm tracking-wider">Search News</h3>
+                        <div class="relative">
+                            <input type="text" placeholder="Search articles..." class="w-full bg-dark-bg border border-white/10 rounded-lg py-3 px-4 pl-10 focus:outline-none focus:border-neon-green transition text-sm">
+                            <i class="fas fa-search absolute left-3 top-3.5 text-gray-500"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-card-bg p-6 rounded-2xl border border-white/5 sticky top-28">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold uppercase text-sm tracking-wider">Trending Now</h3>
+                            <span class="w-2 h-2 bg-neon-green rounded-full animate-pulse"></span>
+                        </div>
+
+                        <div class="space-y-6">
+                            <a href="#" class="flex gap-4 group">
+                                <span class="text-3xl font-black text-gray-700 group-hover:text-neon-green transition">01</span>
+                                <div>
+                                    <h4 class="font-bold text-sm leading-snug group-hover:text-neon-green transition mb-1">Cara Mendapatkan Icon Zidane Gratis</h4>
+                                    <span class="text-xs text-gray-500">Guide • 2h ago</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="flex gap-4 group">
+                                <span class="text-3xl font-black text-gray-700 group-hover:text-neon-green transition">02</span>
+                                <div>
+                                    <h4 class="font-bold text-sm leading-snug group-hover:text-neon-green transition mb-1">Server Maintenance Update</h4>
+                                    <span class="text-xs text-gray-500">News • 5h ago</span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex gap-4 group">
+                                <span class="text-3xl font-black text-gray-700 group-hover:text-neon-green transition">03</span>
+                                <div>
+                                    <h4 class="font-bold text-sm leading-snug group-hover:text-neon-green transition mb-1">Top 10 Striker Murah Meriah</h4>
+                                    <span class="text-xs text-gray-500">Tips • 1d ago</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="mt-8 relative rounded-xl overflow-hidden group cursor-pointer">
+                            <img src="https://placehold.co/300x400/111/fff?text=Buy+FC+Points" class="w-full object-cover opacity-70 group-hover:opacity-100 transition">
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-neon-green text-black text-xs font-bold px-2 py-1 rounded">PROMO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold uppercase mb-8 border-l-4 border-neon-green pl-4">You May Also Like</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="#" class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group">
+                        <div class="h-40 overflow-hidden">
+                            <img src="https://placehold.co/400x250/222/fff?text=Related+1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-neon-green transition">Analisis Taktik 4-3-3</h4>
+                            <p class="text-xs text-gray-500">Oct 20, 2024</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group">
+                        <div class="h-40 overflow-hidden">
+                            <img src="https://placehold.co/400x250/333/fff?text=Related+2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-neon-green transition">Fitur Baru Career Mode</h4>
+                            <p class="text-xs text-gray-500">Oct 19, 2024</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="bg-card-bg rounded-xl overflow-hidden border border-white/5 hover:border-neon-green transition group">
+                        <div class="h-40 overflow-hidden">
+                            <img src="https://placehold.co/400x250/444/fff?text=Related+3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2 group-hover:text-neon-green transition">Update Wajah Pemain</h4>
+                            <p class="text-xs text-gray-500">Oct 18, 2024</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-black text-white py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-xs text-gray-600">
+            &copy; 2024 FC Mobile Inc. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

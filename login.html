@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - FC Mobile</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#32f653',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#161616',
+                        'input-bg': '#0f0f0f'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans mb-3 flex items-center justify-center overflow-hidden relative">
+
+    <div class="absolute inset-0 z-0">
+        <img src="https://placehold.co/1920x1080/050505/333?text=Stadium+Crowd" alt="Background" class="w-full h-full object-cover opacity-40 blur-sm">
+        <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-4xl h-full md:h-auto flex rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-card-bg m-0 md:m-4">
+        
+        <div class="hidden md:flex md:w-1/2 bg-black relative flex-col justify-end p-10 items-start text-left group">
+            <img src="https://placehold.co/600x800/111/fff?text=Star+Player" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            
+            <div class="relative z-10">
+                <h2 class="text-4xl font-black italic tracking-tighter mb-2">
+                    WELCOME TO THE <br><span class="text-neon-green">CLUB</span>
+                </h2>
+                <p class="text-gray-400 text-sm">Bergabunglah dengan jutaan pemain lainnya dan rasakan atmosfer kompetisi tingkat dunia.</p>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-card-bg/95 backdrop-blur-xl">
+            
+            <div class="text-center mb-8">
+                <a href="index.html" class="text-3xl font-black italic tracking-tighter inline-block hover:text-neon-green transition">
+                    FC <span class="text-neon-green text-white">MOBILE</span>
+                </a>
+            </div>
+
+            <div class="flex bg-input-bg p-1 rounded-full mb-8 border border-white/5">
+                <button id="tab-login" onclick="switchTab('login')" class="flex-1 py-2 text-sm font-bold rounded-full bg-white text-black transition shadow-lg">
+                    LOG IN
+                </button>
+                <button id="tab-register" onclick="switchTab('register')" class="flex-1 py-2 text-sm font-bold rounded-full text-gray-500 hover:text-white transition">
+                    SIGN UP
+                </button>
+            </div>
+
+            <form id="login-form" class="space-y-5 animate-fade-in">
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Username / Email</label>
+                    <input type="email" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green transition placeholder-gray-600" placeholder="Enter your email">
+                </div>
+                
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Password</label>
+                    <input type="password" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green transition placeholder-gray-600" placeholder="••••••••">
+                </div>
+
+                <div class="flex justify-between items-center text-sm">
+                    <label class="flex items-center text-gray-400 cursor-pointer hover:text-white">
+                        <input type="checkbox" class="mr-2 accent-neon-green h-4 w-4"> Remember me
+                    </label>
+                    <a href="#" class="text-neon-green font-bold hover:underline">Forgot Password?</a>
+                </div>
+
+                <button type="button" class="w-full bg-neon-green text-black font-bold py-3 rounded-lg hover:bg-white transition uppercase shadow-[0_0_15px_rgba(50,246,83,0.3)]">
+                    Sign In
+                </button>
+            </form>
+
+            <form id="register-form" class="space-y-5 hidden">
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Username</label>
+                    <input type="text" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green transition placeholder-gray-600" placeholder="Create a username">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Email Address</label>
+                    <input type="email" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green transition placeholder-gray-600" placeholder="Enter your email">
+                </div>
+                
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Password</label>
+                    <input type="password" class="w-full bg-input-bg border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green transition placeholder-gray-600" placeholder="Create a password">
+                </div>
+
+                <div class="flex items-start gap-2 text-xs text-gray-400">
+                    <input type="checkbox" class="mt-1 accent-neon-green">
+                    <span>I agree to the <a href="#" class="text-white underline">Terms of Service</a> and <a href="#" class="text-white underline">Privacy Policy</a>.</span>
+                </div>
+
+                <button type="button" class="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-neon-green transition uppercase">
+                    Create Account
+                </button>
+            </form>
+
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-white/10"></div>
+                </div>
+                <div class="relative flex justify-center text-xs">
+                    <span class="bg-card-bg px-2 text-gray-500 uppercase">Or continue with</span>
+                </div>
+            </div>
+
+            <button class="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition flex items-center justify-center gap-3">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                <span>Google</span>
+            </button>
+
+            <p class="mt-8 text-center text-xs text-gray-600">
+                &copy; 2024 FC Mobile. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const tabLogin = document.getElementById('tab-login');
+            const tabRegister = document.getElementById('tab-register');
+
+            if (tab === 'login') {
+                // Show Login
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                
+                // Style Tabs
+                tabLogin.classList.add('bg-white', 'text-black', 'shadow-lg');
+                tabLogin.classList.remove('text-gray-500');
+                
+                tabRegister.classList.remove('bg-white', 'text-black', 'shadow-lg');
+                tabRegister.classList.add('text-gray-500');
+            } else {
+                // Show Register
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+
+                // Style Tabs
+                tabRegister.classList.add('bg-white', 'text-black', 'shadow-lg');
+                tabRegister.classList.remove('text-gray-500');
+                
+                tabLogin.classList.remove('bg-white', 'text-black', 'shadow-lg');
+                tabLogin.classList.add('text-gray-500');
+            }
+        }
+    </script>
+</body>
+</html>
